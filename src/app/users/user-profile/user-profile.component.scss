@@ -1,0 +1,61 @@
+.stats {
+  font-size: 2rem;
+  margin-bottom: -0.1rem;
+}
+
+.divider {
+  margin-top: 12px;
+  width: 1px;
+  height: 1rem;
+  background-color: white;
+}
+
+.img-avatar {
+  border-radius: 50%;
+  object-fit: cover;
+  align-self: center;
+  width: 60%;
+  height: 60%;
+}
+
+.card {
+  margin-bottom: 2rem;
+  border-radius: 0.8rem;
+}
+
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+}
+
+
+.container {
+  min-height: 100vh !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media only screen and (max-width: 767px) {
+    height: auto;
+    padding: 1rem;
+  }
+
+  @media only screen and (min-width: 767px) {
+    height: auto;
+    padding: 1rem;
+  }
+}
+
+.card {
+  @media only screen and (max-width: 767px) {
+    flex-direction: column;
+  }
+}
+
+.col-lg-4 {
+  @media only screen and (max-width: 767px) {
+    flex-basis: 100%;
+  }
+}

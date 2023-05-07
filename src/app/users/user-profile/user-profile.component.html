@@ -1,0 +1,58 @@
+<div *ngIf="isLoading" class="vh-100 d-flex justify-content-center align-items-center" >
+  <div class="spinner-border text-light" style="width: 5rem; height: 5rem;" role="status">
+  </div>
+</div>
+
+<div  *ngIf="!isLoading" class="container-fluid d-flex justify-content-center align-items-center container">
+    <div class="col-lg-8 col-md-10 col-sm-12">
+      <div class="card shadow-lg">
+        <div class="row no-gutters">
+          <div class="col-lg-4 col-md-12 text-center p-5">
+            <div>
+              <img [src]="user.avatarUrl || 'https://via.placeholder.com/150'" class="img-avatar" alt="avatar">
+            </div>
+            <div class="mt-4">
+              <h6><b>{{ user.name }}</b></h6>
+              <p>{{ user.username }}</p>
+            </div>
+            <div class="mt-4">
+              <p>{{ user.location }}</p>
+              <a href="{{ user.profileUrl }}" target="_blank">Connect to Github</a>
+            </div>
+          </div>
+          <div class="col-lg-8 col-md-12 p-5 mt-5">
+            <div class="row mb-3">
+              <div class="col-4 col-md-4">
+                <p class="stats">{{ user.public_repos }}</p>
+                <p><b>Public Repos</b></p>
+              </div>
+              <div class="col-4 col-md-4">
+                <p class="stats">{{ user.followers }}</p>
+                <p> <b>Followers</b></p>
+              </div>
+              <div class="col-4 col-md-4">
+                <p class="stats">{{ user.following }}</p>
+                <p> <b>Following</b></p>
+              </div>
+            </div>
+            <div class="card-title mb-4">
+              <p><b>Biography:</b>{{ user.bio }}</p>
+            </div>
+            <div class="card-title mb-4">
+                <p><b>Company:</b>{{user.company || "N/A" }}</p>
+              </div>
+              <div class="card-title mb-4">
+                <p><b>Twitter:</b>{{user.twitter_username || "N/A"}}</p>
+              </div>
+          </div>
+        </div>
+      
+      </div>
+      <div class="d-flex justify-content-center mt-4">
+        <a (click)="back()" class="btn text-white"> &lt; Back</a>
+        <div class="divider mx-2"></div>
+        <a (click)="next()" class="btn text-white">Next &gt;</a>
+      </div>
+    </div>
+  </div>
+  

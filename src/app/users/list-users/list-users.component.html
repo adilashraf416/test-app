@@ -1,0 +1,19 @@
+<div *ngIf="isLoading" class="vh-100 d-flex justify-content-center align-items-center" >
+  <div class="spinner-border text-light" style="width: 5rem; height: 5rem;" role="status">
+  </div>
+</div>
+
+<div *ngIf="!isLoading" class="container d-flex justify-content-center mt-5 mb-5 vh-100">
+  <div class="row">
+    <div *ngFor="let user of users" class="mb-4 col-lg-4 col-md-3 col-sm-4">
+      <div class="card">
+        <img [src]="user.avatarUrl || 'https://via.placeholder.com/150'" class="img-avatar mt-2" alt="...">
+        <div class="card-body">
+          <h5 class="card-title text-center">{{ user.name }}</h5>
+          <div class="card-title text-center">{{ user.username }}</div>
+          <a [routerLink]="['/user', user.username]" class="btn btn-primary">View Profile</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
